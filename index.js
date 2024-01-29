@@ -7,19 +7,14 @@ dotenv.config();
 const PORT=process.env.PORT;
 const URL=process.env.URL;
 const cors=require("cors");
-
+const dbConnect=require("../config/database.js");
 //Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 
-// MongoDB connection
-connnectionFunction(URL).then( ()=>{
-    console.log("DataBase Connected sucessfully");
-}).catch( (err)=> {
-    console.log(" Database connection failed : "+err);
-});
+dbConnect();
 
 
 app.post("/contact",handleEnquiry);
