@@ -7,7 +7,7 @@ dotenv.config();
 const PORT=process.env.PORT;
 const URL=process.env.URL;
 const cors=require("cors");
-const dbConnect=require("../config/database.js");
+const dbConnect=require("./config/database.js");
 //Middleware
 app.use(cors());
 app.use(express.json());
