@@ -1,0 +1,19 @@
+const mongoose=require("mongoose");
+const userSchema=new mongoose.Schema({
+    name:{
+        type: String,
+        required: true,
+    },
+    email:{
+        type: String,
+        required: true,
+
+    },
+    inquiry:{
+        type: String,
+        required: true,
+    },
+},{timestamps:true});
+const USER=mongoose.model("user",userSchema);
+module.exports=USER;
+    
